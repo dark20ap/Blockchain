@@ -1,0 +1,40 @@
+pragma solidity 0.5.11;
+
+contract Calculadora {
+    // Variables
+    int256 public resultado;
+    
+    // Constructor
+    constructor() public {
+        resultado = 0;
+    }
+    
+    // Metodos
+        // function <nombre>([argumentos]) [visibility] [mutability] [modifier] [returns(<type>)]
+        
+        // Suma
+        function suma(int256 num) public returns(int256) {
+            resultado += num;
+            return resultado;
+        }
+        
+        // Resta 
+        function resta(int256 num) public returns(int256){
+            resultado -= num;
+            return resultado;
+        }
+        
+        // Multiplicacion 
+        function multiplicacion(int256 num) public returns(int256){
+            resultado *= num;
+            return resultado;
+        }
+        
+        // Division
+        function division(int256 num) public returns(int256){
+            require(num != 0, "No se puede dividir entre 0");
+            resultado /= num;
+            return resultado;
+        }
+        
+}
